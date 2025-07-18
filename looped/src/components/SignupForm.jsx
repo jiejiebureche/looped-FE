@@ -4,25 +4,32 @@ import bgImage from '../assets/bg.jpg';
 
 const Signup = ({ onBackToLogin }) => {
   return (
-    <div
-      className="fixed top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl p-8 w-full max-w-md mx-4 shadow-lg">
-        <div className="text-center mb-6">
-          <div className="flex justify-center mb-2">
-            <LoopedLogo className="h-8 w-auto" />
-          </div>
-          <h2 className="text-2xl font-semibold">Create your account</h2>
-          <p className="text-sm mt-1">
-            Already have an account?{' '}
-            <button onClick={onBackToLogin} className="text-blue-600 hover:underline">
-              Log in
-            </button>
-          </p>
-        </div>
+    <div className="flex flex-col md:flex-row h-screen w-screen">
+      {/* Left side image */}
+      <div className="w-full md:w-1/2 h-40 md:h-full mb-4 md:mb-0">
+        <img
+          src={bgImage}
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-        <form className="space-y-4">
+      {/* Right side form directly on white background */}
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-white px-4">
+        <form className="w-full max-w-md space-y-4">
+          <div className="text-center mb-6">
+            <div className="flex justify-center mb-2">
+              <LoopedLogo className="h-12 w-auto" />
+            </div>
+            <h2 className="text-2xl font-semibold">Welcome to Looped!</h2>
+            <p className="text-sm mt-1">
+              Already have an account?{' '}
+              <button onClick={onBackToLogin} className="text-blue-600 hover:underline">
+                Log in
+              </button>
+            </p>
+          </div>
+
           <input
             type="text"
             placeholder="User name"

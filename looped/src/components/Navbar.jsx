@@ -19,12 +19,12 @@ const Navbar = () => {
     }, [menuOpen]);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-[#530B73] text-white shadow-md backdrop-blur-lg border-b border-white/10 overflow-visible">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-black text-white shadow-md backdrop-blur-lg border-b border-white/10 overflow-visible">
             <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between h-[64px]">
                 {/* Left: Logo */}
                 <div className="flex items-center space-x-3 justify-center">
                     <img
-                        src="/src/assets/looped-white.svg"
+                        src="/src/assets/looped-white3.svg"
                         alt="Looped Logo"
                         className="h-30 object-contain"
                     />

@@ -80,6 +80,6 @@ button:hover {
 
 /* Custom hover colors via utility classes */
 .btn-hover-pink:hover {
-  background-color: #ffdffd; /* Tailwind pink-500 */
+  background-color: #decdde; /* Tailwind pink-500 */
   filter: none;
 }

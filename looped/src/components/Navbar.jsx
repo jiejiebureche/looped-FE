@@ -107,7 +107,7 @@ const Navbar = () => {
 
             {/* Mobile Dropdown */}
             {menuOpen && (
-                <div className="md:hidden flex flex-col items-center bg-[#530B73] text-white py-4 space-y-4">
+                <div className="md:hidden flex flex-col items-center bg-black text-white py-4 space-y-4">
                     <div className="flex items-center space-x-2 cursor-pointer">
                         <div className="w-6 h-6 rounded-full bg-white/70"></div>
                         <span className="font-medium text-white">{username}</span>

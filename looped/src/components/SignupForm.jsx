@@ -21,10 +21,10 @@ const Signup = ({ onBackToLogin }) => {
             <div className="flex justify-center mb-2">
               <LoopedLogo className="h-12 w-auto" />
             </div>
-            <h2 className="text-2xl font-semibold">Welcome to Looped!</h2>
-            <p className="text-sm mt-1">
+            <h2 className="text-2xl font-semibold text-black">Welcome to Looped!</h2>
+            <p className="text-sm mt-1 text-gray-500">
               Already have an account?{' '}
-              <button onClick={onBackToLogin} className="text-blue-600 hover:underline">
+              <button onClick={onBackToLogin} className="text-[#530B73] hover:underline">
                 Log in
               </button>
             </p>
@@ -33,17 +33,17 @@ const Signup = ({ onBackToLogin }) => {
           <input
             type="text"
             placeholder="User name"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="text-gray-500 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <input
             type="email"
             placeholder="Email address"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="text-gray-500 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <input
             type="password"
             placeholder="Password"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="text-gray-500 w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <p className="text-xs text-gray-500">
@@ -52,7 +52,7 @@ const Signup = ({ onBackToLogin }) => {
 
           <div className="flex items-center space-x-2">
             <input type="checkbox" id="robot" className="w-4 h-4" />
-            <label htmlFor="robot" className="text-sm">
+            <label htmlFor="robot" className="text-sm text-gray-700">
               I’m not a robot
             </label>
           </div>
@@ -66,8 +66,8 @@ const Signup = ({ onBackToLogin }) => {
 
           <p className="text-xs text-gray-500 text-center">
             By creating an account, you agree to our{' '}
-            <a href="#" className="underline">Terms of Use</a> and{' '}
-            <a href="#" className="underline">Privacy Policy</a>.
+            <a href="#" className="underline text-[#530B73]">Terms of Use</a> and{' '}
+            <a href="#" className="underline text-[#530B73]">Privacy Policy</a>.
           </p>
         </form>
       </div>

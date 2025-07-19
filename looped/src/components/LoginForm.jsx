@@ -1,6 +1,6 @@
 import React from "react";
 import LoopedLogo from "../assets/looped.svg?react";
-import bgImage from "../assets/bg.jpg";
+import bgImage from "../assets/bg4.png";
 
 const Login = ({ onSignupClick }) => {
   return (

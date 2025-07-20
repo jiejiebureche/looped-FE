@@ -54,7 +54,7 @@ const Navbar = () => {
                         <div className="relative">
                             <button
                                 onClick={() => setCreateOpen((prev) => !prev)}
-                                className="btn-hover-pink flex items-center bg-white text-[#530B73] font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition border border-white"
+                                className="font-pixelateddisplay btn-hover-pink flex items-center bg-white text-[#530B73] font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition border border-white"
                                 style={{ backgroundColor: "#fff" }}
                             >
                                 <Plus size={16} className="mr-1" />
@@ -132,7 +132,7 @@ const Navbar = () => {
                     <div className="relative">
                         <button
                             onClick={() => setCreateOpen((prev) => !prev)}
-                            className="btn-hover-pink flex items-center bg-white text-[#530B73] font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition border border-white"
+                            className="font-pixelateddisplay btn-hover-pink flex items-center bg-white text-[#530B73] font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition border border-white"
                             style={{ backgroundColor: "#fff" }}
                         >
                             <Plus size={16} className="mr-1" />

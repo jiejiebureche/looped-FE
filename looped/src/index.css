@@ -10,10 +10,40 @@ body {
   color: #f3f4f6;
 }
 
+.font-pixelateddisplay {
+  font-family: "PixelatedDisplay", sans-serif;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff;
+}
+
+.font-sd {
+  font-family: "SD", sans-serif;
+}
+
+/* src/fonts.css */
+@font-face {
+  font-family: "PixelatedDisplay";
+  src: url("./assets/fonts/PixelatedDisplay.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SD";
+  src: url("./assets/fonts/sd_auto_pilot.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* === ANIMATIONS === */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
@@ -25,8 +55,8 @@ body {
   display: none;
 }
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* === TAILWIND CUSTOM UTILITIES === */
@@ -43,11 +73,11 @@ body {
   .animate-loading-bar {
     background: linear-gradient(
       20deg,
-      #0d0d63,  /* midnight blue */
-      #4b007a,  /* deep purple */
-      #9845a3,  /* medium purple */
-      #e044bd,  /* hot pink */
-      #f9d6e5   /* pale pink */
+      #0d0d63,
+      /* midnight blue */ #4b007a,
+      /* deep purple */ #9845a3,
+      /* medium purple */ #e044bd,
+      /* hot pink */ #f9d6e5 /* pale pink */
     );
     background-size: 400% 400%;
     box-shadow: 0 0 8px #e044bd, 0 0 15px #9845a3;

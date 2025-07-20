@@ -15,7 +15,7 @@ const Login = ({ onSignupClick, onLoginSuccess }) => {
               <LoopedLogo className="h-full w-full object-contain" />
             </div>
           </div>
-          <h2 className="text-2xl font-semibold text-black">Log in</h2>
+          <h2 className="font-pixelateddisplay text-2xl font-semibold text-black">Log in</h2>
           <p className="text-sm mt-1 text-gray-500">
             Don’t have an account?{" "}
             <button

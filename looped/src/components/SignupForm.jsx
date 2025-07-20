@@ -4,7 +4,7 @@ import bgImage from '../assets/bg4.png';
 
 const Signup = ({ onBackToLogin, onSignupSuccess }) => {
   return (
-    <div className="flex flex-col md:flex-row h-screen w-screen">
+    <div className="relative z-10 flex flex-col md:flex-row h-screen w-screen">
       {/* Left side image */}
       <div className="w-full md:w-1/2 h-40 md:h-full mb-4 md:mb-0">
         <img
@@ -21,7 +21,7 @@ const Signup = ({ onBackToLogin, onSignupSuccess }) => {
             <div className="flex justify-center mb-2">
               <LoopedLogo className="h-12 w-auto" />
             </div>
-            <h2 className="text-2xl font-semibold text-black">Welcome to Looped!</h2>
+            <h2 className="font-pixelateddisplay text-2xl font-semibold text-black">Welcome to Looped!</h2>
             <p className="text-sm mt-1 text-gray-500">
               Already have an account?{' '}
               <button

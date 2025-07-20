@@ -6,7 +6,7 @@ const SectionSeparator = () => (
   <hr
     style={{
       border: "none",
-      height: "2px",
+      height: "1px",
       backgroundColor: "#000000",
       margin: "2rem 0",
     }}
@@ -17,13 +17,16 @@ const Homepage = () => {
   return (
     <div className="relative z-10 max-w-7xl mx-auto px-4 pt-24 pb-8 text-white">
       {/* Background Squares */}
-      <div className="fixed inset-0 -z-[1] overflow-hidden">
+      <div
+        className="fixed inset-0 -z-[1] overflow-hidden"
+        style={{ opacity: 0.4 }}
+      >
         <div className="absolute inset-0">
-          <div style={{ width: "100%", height: "100%"}}>
+          <div style={{ width: "100%", height: "100%" }}>
             <Squares
               speed={0.5}
-              squareSize={40}
-              direction="diagonal" // up, down, left, right, diagonal
+              squareSize={25}
+              direction="diagonal"
               borderColor="#530B73"
               hoverFillColor="#530B73"
             />

@@ -33,7 +33,7 @@ function AppRoutes({ isAuthenticated, setIsAuthenticated }) {
 
   const handleSignupSuccess = () => {
     setIsAuthenticated(true);
-    navigate('/home');
+    navigate('/');
   };
 
   return (
@@ -52,7 +52,7 @@ function AppRoutes({ isAuthenticated, setIsAuthenticated }) {
         />
         <Route
           path="/signup"
-          element={<Signup onBackToLogin={handleLoginClick} onSignupSuccess={handleSignupSuccess} />}
+          element={<Signup onBackToLogin={handleLoginClick} onSignupSuccess={handleLoginClick} />}
         />
         <Route
           path="/home"

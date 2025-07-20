@@ -2,7 +2,7 @@ import React from 'react';
 import LoopedLogo from '../assets/looped.svg?react';
 import bgImage from '../assets/bg4.png';
 
-const Signup = ({ onBackToLogin }) => {
+const Signup = ({ onBackToLogin, onSignupSuccess }) => {
   return (
     <div className="flex flex-col md:flex-row h-screen w-screen">
       {/* Left side image */}
@@ -16,7 +16,7 @@ const Signup = ({ onBackToLogin }) => {
 
       {/* Right side form directly on white background */}
       <div className="w-full md:w-1/2 flex items-center justify-center bg-white px-4">
-        <form className="w-full max-w-md space-y-4">
+        <form className="w-full max-w-md space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="text-center mb-6">
             <div className="flex justify-center mb-2">
               <LoopedLogo className="h-12 w-auto" />
@@ -24,7 +24,11 @@ const Signup = ({ onBackToLogin }) => {
             <h2 className="text-2xl font-semibold text-black">Welcome to Looped!</h2>
             <p className="text-sm mt-1 text-gray-500">
               Already have an account?{' '}
-              <button onClick={onBackToLogin} className="text-[#530B73] hover:underline">
+              <button
+                type="button"
+                onClick={onBackToLogin}
+                className="text-[#530B73] hover:underline"
+              >
                 Log in
               </button>
             </p>
@@ -57,9 +61,11 @@ const Signup = ({ onBackToLogin }) => {
             </label>
           </div>
 
+          {/* 🔁 Simulate successful signup */}
           <button
+            type="button"
+            onClick={onSignupSuccess}
             className="w-full bg-black text-white py-2 rounded-full"
-            disabled
           >
             Create an account
           </button>

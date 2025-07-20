@@ -2,7 +2,7 @@ import React from "react";
 import LoopedLogo from "../assets/looped.svg?react";
 import bgImage from "../assets/bg4.png";
 
-const Login = ({ onSignupClick }) => {
+const Login = ({ onSignupClick, onLoginSuccess }) => {
   return (
     <div
       className="fixed top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
@@ -49,7 +49,11 @@ const Login = ({ onSignupClick }) => {
           </div>
         </div>
 
-        <button className="w-full bg-black text-white py-2 rounded-full">
+        {/* 🚀 Trigger navigation to homepage */}
+        <button
+          onClick={onLoginSuccess}
+          className="w-full bg-black text-white py-2 rounded-full cursor-pointer"
+        >
           Log in
         </button>
       </div>

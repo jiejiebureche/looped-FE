@@ -6,12 +6,12 @@ const VinylAlbum = ({
     artist = "Artist Name",
 }) => {
     return (
-        <div className="relative group w-full aspect-square">
+        <div className="relative group w-full aspect-square rounded-lg overflow-hidden bg-black hover:bg-gray-800 transition-colors duration-300">
             {/* Album Cover (Square) */}
             <img
                 src={coverUrl}
                 alt={title}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
 
             {/* Vinyl (Circular with spinning effect) */}

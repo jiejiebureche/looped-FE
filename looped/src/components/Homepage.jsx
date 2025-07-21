@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from 'raster-react';
 import VinylAlbum from "./VinylAlbum";
 import "/src/index.css";
 import Squares from "./Squares";
+
 const SectionSeparator = () => (
   <hr
     style={{
@@ -14,6 +16,36 @@ const SectionSeparator = () => (
 );
 
 const Homepage = () => {
+  const scrollRef = useRef(null);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const updateScrollButtons = () => {
+      setShowLeft(el.scrollLeft > 0);
+      setShowRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+    };
+
+    updateScrollButtons();
+    el.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+
+    return () => {
+      el.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
+  }, []);
+
+  const scroll = (dir) => {
+    scrollRef.current?.scrollBy({
+      left: dir === "left" ? -300 : 300,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="relative z-10 max-w-7xl mx-auto px-4 pt-24 pb-8 text-white">
       {/* Background Squares */}
@@ -33,6 +65,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
       {/* New Album Releases */}
       <section className="mb-12">
         <h2
@@ -43,13 +76,12 @@ const Homepage = () => {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className="bg-black p-4 rounded-lg shadow hover:shadow-lg transition"
-            >
+            <div key={i}>
               <VinylAlbum />
-              <p className="text-sm font-medium">Album Title</p>
-              <p className="text-xs text-gray-400">Artist Name</p>
+              <div className="mt-2 bg-black p-2 rounded-lg text-center">
+                <p className="text-sm font-medium">Album Title</p>
+                <p className="text-xs text-gray-400">Artist Name</p>
+              </div>
             </div>
           ))}
         </div>
@@ -64,17 +96,43 @@ const Homepage = () => {
         >
           Popular Releases
         </h2>
-        <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-          {[...Array(10)].map((_, i) => (
-            <div
-              key={i}
-              className="min-w-[160px] bg-black p-4 rounded-lg shadow hover:shadow-lg transition"
+
+        <div className="relative">
+          {showLeft && (
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
             >
-              <VinylAlbum />
-              <p className="text-sm font-medium">Album Title</p>
-              <p className="text-xs text-gray-400">Artist Name</p>
-            </div>
-          ))}
+              <ChevronLeftIcon size={50} strokeWidth={0.25} color="#530B73" />
+            </button>
+          )}
+
+          <div
+            ref={scrollRef}
+            className="flex space-x-4 overflow-x-auto scrollbar-hide px-12"
+          >
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={i}
+                className="min-w-[160px] bg-black p-4 rounded-lg shadow hover:shadow-lg transition"
+              >
+                <div className="shadow-lg shadow-black aspect-square">
+                  <VinylAlbum />
+                </div>
+                <p className="mt-2 text-sm font-medium">Album Title</p>
+                <p className="text-xs text-gray-400">Artist Name</p>
+              </div>
+            ))}
+          </div>
+
+          {showRight && (
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 "
+            >
+              <ChevronRightIcon size={50} strokeWidth={0.25} color="#530B73" />
+            </button>
+          )}
         </div>
       </section>
       <SectionSeparator />
